@@ -37,13 +37,13 @@ A reproducible comparison of nine speech-to-text engines on the same audio with 
 | Latency | Wall-clock seconds per file, reported as the mean and median over files. Hosted APIs include upload and server time. Local engines run on the test machine with no network. AssemblyAI is timed from the start of the upload to the finished transcript. |
 | USD per audio hour | The vendor's published batch price for the model used. |
 
-Velma, Deepgram and AssemblyAI are called 3 times per file and the latencies averaged. Chirp 3 and MAI-Transcribe 2 are called 2 times per file. Modulate's own account of how it benchmarks speech models is in its [benchmark methodology](https://www.modulate.ai/benchmark-methodology).
+Velma, Deepgram and AssemblyAI are called 3 times per file and the latencies averaged. Chirp 3 and MAI-Transcribe 2 are called 2 times per file. Modulate's own account of how it benchmarks speech models is in its [benchmark methodology](https://www.modulate.ai/benchmark-methodology?utm_source=github&utm_medium=repo&utm_campaign=infrasity_m1_repo1).
 
 ## Engines and models
 
 | Engine | File | Model | Settings | USD per audio hour |
 |---|---|---|---|---|
-| Velma Transcribe | `engines/velma.py` | `velma-2-stt-batch-english-vfast` | none | 0.025 ([pricing](https://www.modulate.ai/api-pricing)) |
+| Velma Transcribe | `engines/velma.py` | `velma-2-stt-batch-english-vfast` | none | 0.025 ([pricing](https://www.modulate.ai/api-pricing?utm_source=github&utm_medium=repo&utm_campaign=infrasity_m1_repo1)) |
 | Deepgram | `engines/deepgram.py` | `nova-3` | `language=en`, `smart_format=true` | 0.258 ([pricing](https://deepgram.com/pricing)) |
 | AssemblyAI | `engines/assemblyai.py` | `universal-3-5-pro` | `language_code=en` | 0.21 ([pricing](https://www.assemblyai.com/pricing)) |
 | Google Chirp 3 | `engines/openrouter_stt.py` | `google/chirp-3` via OpenRouter | `language=en` | 0.961 ([pricing](https://openrouter.ai/google/chirp-3)) |
@@ -55,7 +55,7 @@ Velma, Deepgram and AssemblyAI are called 3 times per file and the latencies ave
 
 Hosted prices are pay-as-you-go batch rates from the vendors' pricing pages (October 2026). Local engines have no API charge; local compute is not counted.
 
-API references: [Velma](https://docs.modulate.ai/api-reference/stt/batch-english-vfast), [Deepgram](https://developers.deepgram.com/docs/pre-recorded-audio), [AssemblyAI](https://www.assemblyai.com/docs/getting-started/transcribe-an-audio-file), [OpenRouter](https://openrouter.ai/docs/guides/overview/multimodal/stt).
+API references: [Velma](https://docs.modulate.ai/api-reference/stt/batch-english-vfast?utm_source=github&utm_medium=repo&utm_campaign=infrasity_m1_repo1), [Deepgram](https://developers.deepgram.com/docs/pre-recorded-audio), [AssemblyAI](https://www.assemblyai.com/docs/getting-started/transcribe-an-audio-file), [OpenRouter](https://openrouter.ai/docs/guides/overview/multimodal/stt).
 
 ## Usage
 
@@ -66,7 +66,7 @@ pip install -r requirements.txt
 cp .env.example .env     # set VELMA_API_KEY, DEEPGRAM_API_KEY, ASSEMBLYAI_API_KEY, OPENROUTER_API_KEY
 ```
 
-Keys are read from the environment only. `.env` is git-ignored. To get a Velma key and make a first call, see the [Velma quickstart](https://docs.modulate.ai/quickstart).
+Keys are read from the environment only. `.env` is git-ignored. To get a Velma key and make a first call, see the [Velma quickstart](https://platform.modulate.ai/api?utm_source=github&utm_medium=repo&utm_campaign=infrasity_m1_repo1).
 
 ```bash
 # 1. fetch the data slices (audio is git-ignored, manifests are committed)
